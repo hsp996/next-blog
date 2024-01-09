@@ -11,40 +11,29 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'body-leading-blank': [1, 'always'],
-    'body-max-line-length': [2, 'always', 100],
-    'footer-leading-blank': [1, 'always'],
-    'footer-max-line-length': [2, 'always', 100],
-    'header-max-length': [2, 'always', 100],
-    'scope-case': [2, 'always', 'lower-case'],
-    'subject-case': [
-      2,
-      'never',
-      ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
-    ],
-    'subject-empty': [2, 'never'],
-    'subject-full-stop': [2, 'never', '.'],
-    'type-case': [2, 'always', 'lower-case'],
-    'type-empty': [2, 'never'],
+    'scope-empty': [0],
+    'scope-case': [0],
+    'subject-full-stop': [0],
+    'subject-case': [0],
     'type-enum': [
       2,
       'always',
       [
-        'build',
-        'chore',
-        'ci',
-        'docs',
-        'feat',
-        'fix',
-        'perf',
-        'refactor',
-        'revert',
-        'style',
-        'test',
-        'translation',
-        'security',
-        'changeset',
+        'feat', // 新增功能
+        'update', // 更新功能
+        'ui', // 样式改动
+        'fix', // 修复功能bug
+        'merge', // 合并分支
+        'refactor', // 重构功能
+        'perf', // 性能优化
+        'revert', // 回退提交
+        'style', // 不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等)
+        'build', // 修改项目构建工具(例如 glup，webpack，rollup 的配置等)的提交
+        'ci', // 更改我们的 CI 配置文件和脚本（示例范围：Travis、Circle、BrowserStack、SauceLabs）
+        'docs', // 文档新增、改动
+        'test', // 增加测试、修改测试
+        'chore', // 不修改src或者test的其余修改，例如构建过程或辅助工具的变动
       ],
     ],
   },
-};
+}
