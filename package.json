@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint-staged": "lint-staged",
     "prettier": "prettier --write .",
     "prepare": "husky install"
   },
@@ -33,5 +34,12 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx",
+    "*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   }
+
 }
